@@ -102,7 +102,6 @@ export class TagsService {
         .sort({ createdAt: -1 })
         .skip((Number(page) - 1) * Number(limit))
         .limit(Number(limit))
-        .populate('interest')
         .exec(),
       this.tagModel.countDocuments(where).exec(),
     ]);

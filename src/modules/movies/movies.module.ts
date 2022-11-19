@@ -1,9 +1,22 @@
 import { Module } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { MoviesController } from './movies.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Movie, MovieSchema } from './movies.model';
 
 @Module({
+  imports: [
+    MongooseModule.forFeatureAsync([
+      {
+        name: Movie.name,
+        useFactory: () => {
+          const movieSchema = MovieSchema;
+          return movieSchema;
+        },
+      },
+    ]),
+  ],
   controllers: [MoviesController],
-  providers: [MoviesService]
+  providers: [MoviesService],
 })
 export class MoviesModule {}
