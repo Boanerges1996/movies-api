@@ -18,5 +18,6 @@ import { Tag, TagSchema } from './tags.model';
   ],
   controllers: [TagsController],
   providers: [TagsService],
+  exports: [TagsService],
 })
 export class TagsModule {}

@@ -3,6 +3,7 @@ import { MoviesService } from './movies.service';
 import { MoviesController } from './movies.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Movie, MovieSchema } from './movies.model';
+import { TagsModule } from '../tags/tags.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { Movie, MovieSchema } from './movies.model';
         },
       },
     ]),
+    TagsModule,
   ],
   controllers: [MoviesController],
   providers: [MoviesService],
