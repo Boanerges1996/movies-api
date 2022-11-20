@@ -51,6 +51,13 @@ describe('TagsService', () => {
         expect(error.message).toBe('Tag already exists');
       }
     });
+
+    it('should get all tags', async () => {
+      const result = await service.getTags({});
+      expect(result.status).toBe('success');
+      expect(result.message).toBe('Tags fetched');
+      expect(result.data['tags'].length).toBe(1);
+    });
   });
 
   afterAll(async () => {
