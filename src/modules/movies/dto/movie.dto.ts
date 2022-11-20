@@ -7,14 +7,14 @@ export class CreateMovieDto {
 
   @IsString()
   @IsOptional()
-  description: string;
+  description?: string;
 
   @IsArray()
   tags: Types.ObjectId[];
 
   @IsString()
   @IsOptional()
-  trailer: string;
+  trailer?: string;
 
   @IsNumber()
   movieLengthInMinutes: number;
@@ -27,11 +27,11 @@ export class CreateMovieDto {
 
   @IsNumber()
   @IsOptional()
-  rating: number;
+  rating?: number;
 
   @IsArray()
   @IsOptional()
-  keywords: string[];
+  keywords?: string[];
 }
 
 export class UpdateMovieDto {

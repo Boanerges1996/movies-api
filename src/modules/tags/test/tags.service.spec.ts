@@ -65,12 +65,4 @@ describe('TagsService', () => {
     await mongoConnection.close();
     await mongodb.stop();
   });
-
-  // afterEach(async () => {
-  //   const collections = mongoConnection.collections;
-  //   for (const key in collections) {
-  //     const collection = collections[key];
-  //     await collection.deleteMany({});
-  //   }
-  // });
 });
